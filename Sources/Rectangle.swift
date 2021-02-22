@@ -9,7 +9,8 @@ public class Rectangle : Shape {
         self.height = height
         self.width = width
     }
-    public func setHeightAndWidth(withHeight height: Int, andWidth width: Int) {
+    
+    public func setHeightAndWidth(withHeight height: Int, andWidth width: Int) throws {
         self.height = height
         self.width = width
     }
@@ -19,7 +20,16 @@ public class Rectangle : Shape {
         width = width * scaleFactor
     }
     
-    public func getArea() -> Int {
-        return height * width
+    public func getArea() -> Float {
+        return Float(height * width)
     }
+    
+    public func getVolume() throws -> Float {
+        throw SpaceTimeError()
+    }
+    
+    public func printAreaToConsole() throws {
+        print("Rectangle area: \(getArea())")
+    }
+    
 }
